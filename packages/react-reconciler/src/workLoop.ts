@@ -28,7 +28,7 @@ function markUpdateFromFiberToRoot(fiber: FiberNode) {
 	let parent = fiber.return;
 	while (parent !== null) {
 		node = parent;
-		parent = parent.return;
+		parent = node.return;
 	}
 	if (node.tag === HostRoot) {
 		return node.stateNode;
